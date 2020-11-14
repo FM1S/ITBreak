@@ -1,3 +1,4 @@
+import NS
 from flask import Flask, url_for, render_template
 
 app = Flask(__name__, static_folder = 'static')
@@ -25,7 +26,12 @@ def main_chat_window():
 @app.route('/new_quest/<quest_text>')
 def render_msgs(quest_text):
     chat_started = 1
-    rsp = "Я тебя услышал :)"
+    #rsp = "Я тебя услышал :)"
+    qst1 = quest_text.split(" ")
+    qst2 = []
+    for q in qst1:
+        qst2.append(int(q))
+    rsp = NS.analyse(qst2)
     pairs.append(MessagePair(quest_text, rsp))
     return render_template('message_pair.html', pairs=pairs)
 

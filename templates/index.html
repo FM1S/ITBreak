@@ -28,18 +28,21 @@
             <div id="showBtn" style="width: 20%; display: {{btn_visibility}}; position: absolute; bottom: 5vh; right: 10vh ;">
                 <button type="button" class="btn open" style="border-radius: 20px;width: 100%; background-color: #ff4f12; color: #ffffff;" onclick="openChat()">Есть вопросы?</button>
             </div>
-            <div id="chat" style="display: {{chat_visibility}}; width: 20%; height: 50%; position: absolute; bottom: 5vh; right: 10vh ; border: 2px solid gray; border-radius: 20px 20px 20px 20px; background-color: #ffffff">
-                <div style="height: 10%; padding-left:20px; border-bottom: 2px solid gray;">
+            <div id="chat" style="display: {{chat_visibility}}; width: 20%; height: 50%; position: absolute; bottom: 5vh; right: 10vh ; border-radius: 20px 20px 20px 20px; background-color: #ffffff; box-shadow: 0px 1px 5px;">
+                <div style="height: 10%; padding-left:20px; padding-top: 2px; padding-bottom: 3px; background-color: #7800ff; color: #ffffff; border-radius: 20px 20px 0px 0px; box-shadow: 0px 1px 3px black;">
                     <h3 style=" width: 80%; display:inline;">Чат-бот</h3>
-                    <button type="button" style="border-radius: 15px; margin-right: 10px; display: inline; background-color: #ff4f12; color: #ffffff; float: right;" onclick="closeChat()">X</button>
+                    <div style=" display:inline">
+                        <button type="button" class="btn open" style="height: 95%;border-radius: 20px;margin-top: 2px; margin-right: 10px; display: inline; background-color: #ff4f12; color: #ffffff; float: right;" onclick="closeChat()">X</button>
+                    </div>
                 </div>
                 <div id="scrollBlock" style="overflow-y: auto; width: 100%; height: 75%">
                     {% block messagepair %}{% endblock %}
                 </div>
-                <div style="height: 15%; border-top: 2px solid gray;padding-left: 5px;padding-top: 5px;padding-bottom: 5px;">
-                    <input id="msg_text"placeholder="Задайте свой вопрос..." style=" width: 80%; height: 95%; border-radius: 5px;display: inline">
-                    <form id="msg_form" style="display:inline" action="/new_quest/tmp">
-                        <button type="submit" onclick="callML()" style="border-radius: 20px; margin-left: 5px; display: inline; background-color: #ff4f12; color: #ffffff;">-></button>
+                <div style="height: 15%; box-shadow: 0px 0px 3px black;border-radius: 0px 0px 20px 20px;padding-left: 5px;padding-top: 5px;padding-bottom: 5px;">
+
+                    <form id="msg_form" onsubmit="callML()" style="display:inline" action="/new_quest/tmp">
+                        <input id="msg_text" placeholder="Задайте свой вопрос..." style=" width: 80%; height: 95%; border-radius: 20px;display: inline">
+                        <button type="submit" class="btn open"  onclick="callML()" style="border-radius: 20px; margin-left: 5px; display: inline; background-color: #ff4f12; color: #ffffff;">-></button>
                         <script>
                             function callML(){
                                 document.getElementById('msg_form').action = "/new_quest/" + document.getElementById('msg_text').value;

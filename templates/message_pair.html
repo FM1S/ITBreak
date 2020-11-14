@@ -3,10 +3,10 @@
 {% block messagepair %}
     {% for pair in pairs %}
         <div id="msg_pair">
-            <div id="question_msg" style="margin-right: 5px; word-wrap: break-word;margin-top: 5px; width:80%; float: right; border: 2px solid gray; border-radius:  10px 10px 0px 10px; background-color: #ffffff">
+            <div id="question_msg" style="margin-right: 5px; word-wrap: break-word;margin-top: 5px; width:80%; float: right; box-shadow: 0px 0px 3px black; border-radius:  10px 10px 0px 10px; background-color: #ffffff">
                 <p style="margin: 5px;">{{pair.quest}}</p>
             </div>
-            <div id="respond_msg" style="width:80%; word-wrap: break-word;margin-left: 5px; margin-top: 5px; float: left; border: 2px solid gray; border-radius: 10px 10px 10px 0px; background-color: #7800ff; color: #ffffff;">
+            <div id="respond_msg" style="width:80%; word-wrap: break-word;margin-left: 5px; margin-top: 5px; float: left; box-shadow: 0px 0px 3px black; border-radius: 10px 10px 10px 0px; background-color: #7800ff; color: #ffffff;">
                 <p style="margin: 5px;">{{pair.resp}}</p>
             </div>
         </div>
